@@ -25,7 +25,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 # Allow vendor/extra to override any property by setting it first
-$(call inherit-product-if-exists, vendor/extra/product.mk)
+#$(call inherit-product-if-exists, vendor/extra/product.mk)
 
 # Inherit from MiuiCamera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
@@ -33,12 +33,12 @@ $(call inherit-product, vendor/MiuiCamera/config.mk)
 # Inherit from daisy device
 $(call inherit-product, device/xiaomi/daisy/device.mk)
 
-# Inherit some common HavocOS-ROM stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common dotOS-ROM stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := daisy
-PRODUCT_NAME := havoc_daisy
+PRODUCT_NAME := dot_daisy
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2 Lite
@@ -59,5 +59,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-#HavocOS Build
-HAVOC_BUILD_TYPE := OFFICIAL
+#dotOS Build
+DOT_OFFICIAL := false
+
+#Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true

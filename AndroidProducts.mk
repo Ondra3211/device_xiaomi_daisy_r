@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_daisy.mk
+    $(LOCAL_DIR)/dot_daisy.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_daisy-user \
-    havoc_daisy-userdebug \
-    havoc_daisy-eng
+    dot_daisy-user \
+    dot_daisy-userdebug \
+    dot_daisy-eng
